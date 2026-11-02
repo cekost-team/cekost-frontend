@@ -82,6 +82,20 @@ const dummyOwnerSummary = {
       status: 'lunas',
     },
   ],
+  roomMosaic: [
+    { number: '01', tenant: 'Andi S.', floor: 1, type: 'AC', price: 1500000, status: 'terisi' },
+    { number: '02', tenant: 'Dimas S.', floor: 1, type: 'AC', price: 1500000, status: 'sebagian', note: 'Sisa 500rb' },
+    { number: '03', tenant: 'Reza F.', floor: 1, type: 'AC', price: 1500000, status: 'terisi' },
+    { number: '04', tenant: 'Rian P.', floor: 1, type: 'Fan', price: 1200000, status: 'telat' },
+    { number: '05', tenant: 'Budi S.', floor: 1, type: 'AC VIP', price: 1800000, status: 'terisi' },
+    { number: '06', tenant: 'Siap Huni', floor: 1, type: 'Non-AC', price: 1100000, status: 'tersedia' },
+    { number: '07', tenant: 'Nadia P.', floor: 2, type: 'Balkon', price: 1200000, status: 'terisi' },
+    { number: '08', tenant: 'Siti R.', floor: 2, type: 'Standard', price: 1000000, status: 'belum_bayar' },
+    { number: '09', tenant: 'Farhan H.', floor: 2, type: 'Standard', price: 1000000, status: 'terisi' },
+    { number: '10', tenant: 'Agus W.', floor: 2, type: 'Standard', price: 1000000, status: 'terisi' },
+    { number: '11', tenant: 'Siap Huni', floor: 2, type: 'Deluks', price: 1400000, status: 'tersedia' },
+    { number: '12', tenant: 'Fajar K.', floor: 2, type: 'Balkon AC', price: 1350000, status: 'terisi' },
+  ],
 }
 
 const dummyTenantSummary = {
