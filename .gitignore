@@ -151,7 +151,10 @@ vite.config.ts.timestamp-*
 .turbo
 
 # Local env / files
+.env
 *.local
+opencode.json
+.opencode/
 
 # Editor directories and files
 .vscode/*
