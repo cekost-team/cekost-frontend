@@ -18,6 +18,8 @@ import PaymentRow from '../components/PaymentRow'
 import RoomMosaicTile from '../components/RoomMosaicTile'
 import RoomCard from '../components/RoomCard'
 import Textarea from '../components/Textarea'
+import TenantCard from '../components/TenantCard'
+import TenantTable from '../components/TenantTable'
 
 export default function ComponentPreview() {
   const [clickCount, setClickCount] = useState(0)
@@ -511,6 +513,60 @@ export default function ComponentPreview() {
                 }}
                 onDetail={() => {}}
                 onAddTenant={() => {}}
+              />
+            </div>
+          </Card>
+
+          <Card title="TenantCard & TenantTable">
+            <div className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <TenantCard
+                  tenant={{
+                    id: 't-01',
+                    nama: 'Andi Saputra',
+                    noHp: '6281234567890',
+                    kamarNomor: '01',
+                    jatuhTempo: 1,
+                    tanggalMasuk: '2026-01-01',
+                    status: 'aktif',
+                    tagihanTerbaru: { periode: 'November 2026', status: 'lunas' },
+                  }}
+                />
+                <TenantCard
+                  tenant={{
+                    id: 't-13',
+                    nama: 'Hendra Wijaya',
+                    noHp: '6281277001122',
+                    kamarNomor: '06',
+                    jatuhTempo: 1,
+                    tanggalMasuk: '2026-02-01',
+                    status: 'pindah',
+                    tagihanTerbaru: { periode: 'Oktober 2026', status: 'lunas' },
+                  }}
+                />
+              </div>
+
+              <TenantTable
+                tenants={[
+                  {
+                    id: 't-01',
+                    nama: 'Andi Saputra',
+                    noHp: '6281234567890',
+                    kamarNomor: '01',
+                    lantai: 1,
+                    kamarTipe: 'Tunggal AC',
+                    tanggalMasuk: '2026-01-01',
+                    masaSewaLabel: '11 Bulan Berjalan',
+                    jatuhTempo: 1,
+                    hargaSewa: 1500000,
+                    status: 'aktif',
+                    tagihanTerbaru: {
+                      periode: 'November 2026',
+                      status: 'lunas',
+                      keterangan: 'Rp 1.500.000 • 4 Nov (BCA)',
+                    },
+                  },
+                ]}
               />
             </div>
           </Card>

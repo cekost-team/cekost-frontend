@@ -62,3 +62,20 @@ export function formatMonthYear(dateInput) {
     year: 'numeric',
   }).format(date)
 }
+
+/**
+ * Format nomor WhatsApp Indonesia ke tampilan lokal 08xx-xxxx-xxxx
+ * Contoh: "6281234567890" -> "0812-3456-7890"
+ *
+ * @param {string} phone - Nomor telepon format internasional atau lokal
+ * @returns {string} Nomor telepon terformat
+ */
+export function formatPhone(phone) {
+  if (!phone) return '-'
+  const digits = String(phone).replace(/\D/g, '')
+  const local = digits.startsWith('62') ? `0${digits.slice(2)}` : digits
+  if (local.length >= 10) {
+    return `${local.slice(0, 4)}-${local.slice(4, 8)}-${local.slice(8)}`
+  }
+  return local || '-'
+}
