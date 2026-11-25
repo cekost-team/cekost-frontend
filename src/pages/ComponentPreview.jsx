@@ -13,6 +13,11 @@ import Input from '../components/Input'
 import SearchBar from '../components/SearchBar'
 import StatusBadge from '../components/StatusBadge'
 import SummaryCard from '../components/SummaryCard'
+import UrgentInvoiceRow from '../components/UrgentInvoiceRow'
+import PaymentRow from '../components/PaymentRow'
+import RoomMosaicTile from '../components/RoomMosaicTile'
+import RoomCard from '../components/RoomCard'
+import Textarea from '../components/Textarea'
 
 export default function ComponentPreview() {
   const [clickCount, setClickCount] = useState(0)
@@ -286,6 +291,18 @@ export default function ComponentPreview() {
                 disabled
                 defaultValue="Kamar Utama 01"
               />
+
+              <Textarea
+                label="Catatan Khusus Pengelola"
+                placeholder="Contoh: Baru dicat warna broken white..."
+                helperText="Catatan internal (hanya pemilik)"
+              />
+
+              <Textarea
+                label="Catatan (Dengan Galat Validasi)"
+                error="Catatan maksimal 250 karakter."
+                defaultValue="Terlalu panjang..."
+              />
             </div>
           </Card>
         </section>
@@ -396,6 +413,105 @@ export default function ComponentPreview() {
               <span className="font-bold text-primary-600 text-base">
                 {clickCount} kali
               </span>
+            </div>
+          </Card>
+        </section>
+
+        {/* ================= DASHBOARD ROW & MOSAIC COMPONENTS ================= */}
+        <section className="space-y-4 pt-4 border-t border-line">
+          <h2 className="text-lg font-bold text-ink">
+            8. Baris Tagihan, Pembayaran, &amp; Tile Status Kamar
+          </h2>
+
+          <Card title="UrgentInvoiceRow">
+            <UrgentInvoiceRow
+              invoice={{
+                id: 'preview-inv-1',
+                roomNumber: '04',
+                tenantName: 'Rian Pratama',
+                status: 'telat',
+                daysLate: 4,
+                dueDate: '2026-11-01',
+                amount: 1200000,
+              }}
+              onSendReminder={() => {}}
+            />
+          </Card>
+
+          <Card title="PaymentRow">
+            <PaymentRow
+              payment={{
+                id: 'preview-pay-1',
+                tenantName: 'Andi Saputra',
+                roomNumber: '01',
+                roomFloor: 1,
+                date: '2026-11-04T14:20:00',
+                method: 'BCA',
+                amount: 1500000,
+                status: 'lunas',
+              }}
+            />
+          </Card>
+
+          <Card title="RoomMosaicTile">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <RoomMosaicTile
+                room={{
+                  number: '01',
+                  tenant: 'Andi S.',
+                  floor: 1,
+                  type: 'AC',
+                  price: 1500000,
+                  status: 'terisi',
+                }}
+              />
+              <RoomMosaicTile
+                room={{
+                  number: '06',
+                  tenant: 'Siap Huni',
+                  floor: 1,
+                  type: 'Non-AC',
+                  price: 1100000,
+                  status: 'tersedia',
+                }}
+              />
+            </div>
+          </Card>
+
+          <Card title="RoomCard">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <RoomCard
+                room={{
+                  id: '01',
+                  nomor: '01',
+                  tipe: 'Tunggal AC',
+                  lantai: 1,
+                  harga: 1500000,
+                  fasilitas: ['AC', 'K. Mandi Dalam', 'Wi-Fi', 'Springbed'],
+                  status: 'terisi',
+                  catatan: 'Sewa lunas periode berjalan',
+                  penghuni: 'Andi Saputra',
+                  paymentStatus: 'lunas',
+                  dueDate: '2026-12-01',
+                }}
+                onEdit={() => {}}
+                onDetail={() => {}}
+              />
+              <RoomCard
+                room={{
+                  id: '06',
+                  nomor: '06',
+                  tipe: 'Tunggal Non-AC',
+                  lantai: 1,
+                  harga: 1100000,
+                  fasilitas: ['Kipas Angin', 'K. Mandi Dalam', 'Kasur Single'],
+                  status: 'tersedia',
+                  catatan: 'Kunci unit tersedia di pengelola',
+                  penghuni: null,
+                }}
+                onDetail={() => {}}
+                onAddTenant={() => {}}
+              />
             </div>
           </Card>
         </section>

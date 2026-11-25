@@ -5,6 +5,7 @@ import MainLayout from "./layouts/MainLayout";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Rooms from "./pages/Rooms";
+import RoomForm from "./pages/RoomForm";
 import Tenants from "./pages/Tenants";
 import Invoices from "./pages/Invoices";
 import Reports from "./pages/Reports";
@@ -37,6 +38,8 @@ export default function App() {
           {/* Khusus pemilik kos */}
           <Route element={<ProtectedRoute allowedRoles={["owner"]} />}>
             <Route path="kamar" element={<Rooms />} />
+            <Route path="kamar/baru" element={<RoomForm />} />
+            <Route path="kamar/:id/ubah" element={<RoomForm />} />
             <Route path="penghuni" element={<Tenants />} />
             <Route path="laporan" element={<Reports />} />
           </Route>

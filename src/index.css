@@ -14,6 +14,7 @@
   --color-line: #e2e8f0;
   --color-ink: #0f172a;
   --color-muted: #64748b;
+  --color-disabled: #94a3b8;
 
   --color-status-paid: #16a34a;
   --color-status-paid-bg: #dcfce7;
@@ -28,4 +29,25 @@
 
   --radius-card: 16px;
   --radius-control: 12px;
+
+  /* Surface container tokens (from Stitch design system) */
+  --color-surface-container-low: #f2f3ff;
+  --color-surface-container: #eaedff;
+  --color-surface-container-high: #e2e7ff;
+  --color-on-surface-variant: #434655;
+
+  /* Primary action foreground */
+  --color-on-primary: #ffffff;
+
+  /* Secondary palette (used in Tambah Kamar preview badge) */
+  --color-secondary: #006e2d;
+  --color-secondary-fixed: #7ffc97;
+  --color-on-secondary-fixed: #002109;
+
+  /* Error palette */
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+
+  /* Border alias */
+  --color-border-line: #e2e8f0;
 }
